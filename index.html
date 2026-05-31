@@ -1,187 +1,115 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Nada ❤️</title>
-
 <style>
-
 body{
-
 font-family:Arial,sans-serif;
-
 background:linear-gradient(135deg,#ffd6e7,#fff0f5);
-
 text-align:center;
-
 padding:40px;
-
+margin:0;
 }
-
 .card{
-
 max-width:800px;
-
 margin:auto;
-
 background:white;
-
 padding:30px;
-
 border-radius:20px;
-
 box-shadow:0 4px 15px rgba(0,0,0,.1);
-
 }
-
 .hidden{display:none;}
-
 button{
-
 padding:12px 20px;
-
 border:none;
-
 border-radius:20px;
-
 cursor:pointer;
-
 margin:10px;
-
+background:#ff69b4;
+color:white;
+font-size:16px;
+font-weight:bold;
+transition:all 0.3s;
 }
-
+button:hover{
+background:#ff1493;
+transform:scale(1.05);
+}
 .heart{
-
 font-size:50px;
-
 animation:pulse 1s infinite;
-
 }
-
 @keyframes pulse{
-
 50%{transform:scale(1.2);}
-
 }
-
+input[type="checkbox"], input[type="radio"]{
+cursor:pointer;
+width:18px;
+height:18px;
+}
+label{
+cursor:pointer;
+font-size:16px;
+}
 </style>
-
 </head>
-
 <body>
-
 <div class="card">
-
 <h1>For Nada ❤️</h1>
-
-<p>Najem left you a special surprise...</p>
-
+<p style="font-size:18px;">Najem left you a special surprise...</p>
 <div id="tasks">
-
 <h3>Complete these missions 💕</h3>
-
 <p><input type="checkbox"> Smile 😊</p>
-
 <p><input type="checkbox"> Think of your favorite memory with Najem 💖</p>
-
 <p><input type="checkbox"> Say "I am loved" out loud ✨</p>
-
 <p><input type="checkbox"> Imagine receiving a giant hug from Najem 🤗</p>
-
 <h3>How much do you love Najem? 😏</h3>
-
 <label><input type="radio" name="love"> A little ❤️</label><br>
-
 <label><input type="radio" name="love"> A lot ❤️❤️</label><br>
-
 <label><input type="radio" name="love"> More than shawarma ❤️❤️❤️</label><br>
-
 <label><input type="radio" name="love" id="correct"> More than the whole universe ❤️∞</label><br><br>
-
 <button onclick="unlock()">Unlock Secret Message ❤️</button>
-
 </div>
-
 <div id="message" class="hidden">
-
 <div class="heart">❤️</div>
-
 <h2>Dear Nada,</h2>
-
 <p>
-
-Sabouhaa ya rez2et umroo la Najemm ❤️
-
-I wanted to say eno bhebekk add l deneee and I am forever grateful for you.
-
+Sabouhaa ya rez2et umroo la Najemm ❤️<br>
+I wanted to say eno bhebekk add l deneee and I am forever grateful for you.<br>
 Ente aghla she be hayete.
-
 </p>
-
 <p>
-
-Smilee smileee ya babyyyy 😘
-
+Smilee smileee ya babyyyy 😘<br>
 Yuuburneeee buzeekkkkkkk w tezeekkkk ❤️😂
-
 </p>
-
 <p>
-
 With all my love,<br>
-
 <b>Najem ❤️</b>
-
 </p>
-
 <button onclick="showLove()">Click for one more surprise 💌</button>
-
 <div id="love" class="hidden">
-
 <h1>I LOVEE YOUUU DADAAA ❤️❤️❤️</h1>
-
+<p style="font-size:24px; margin-top:20px;">You mean everything to me 💕</p>
 </div>
-
 </div>
-
 </div>
-
 <script>
-
 function unlock(){
-
 let checks=[...document.querySelectorAll('input[type="checkbox"]')];
-
 let done=checks.every(c=>c.checked);
-
 let love=document.getElementById('correct').checked;
-
 if(done && love){
-
 document.getElementById('tasks').style.display='none';
-
 document.getElementById('message').classList.remove('hidden');
-
 }else{
-
 alert('Complete all missions and choose the correct answer 😘');
-
 }
-
 }
-
 function showLove(){
-
 document.getElementById('love').classList.remove('hidden');
-
 }
-
 </script>
-
 </body>
-
 </html>
